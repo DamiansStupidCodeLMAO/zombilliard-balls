@@ -1,0 +1,794 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "enchantment": "minecraft:looting",
+              "function": "minecraft:enchanted_count_increase"
+            }
+          ],
+          "name": "minecraft:rotten_flesh"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        },
+        {
+          "condition": "minecraft:random_chance_with_enchanted_bonus",
+          "enchanted_chance": {
+            "type": "minecraft:linear",
+            "base": 0.035,
+            "per_level_above_first": 0.01
+          },
+          "enchantment": "minecraft:looting",
+          "unenchanted_chance": 0.025
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "conditions": [
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:entity_properties",
+                      "entity": "this",
+                      "predicate": {
+                        "flags": {
+                          "is_on_fire": true
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:entity_properties",
+                      "entity": "direct_attacker",
+                      "predicate": {
+                        "equipment": {
+                          "mainhand": {
+                            "predicates": {
+                              "minecraft:enchantments": [
+                                {
+                                  "enchantments": "#minecraft:smelts_loot"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ],
+              "function": "minecraft:furnace_smelt"
+            }
+          ],
+          "name": "minecraft:potato"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "type": "#minecraft:skeletons"
+          }
+        }
+      ],
+      "entries": [
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -283791200,
+                                -1638838285,
+                                -1822067280,
+                                1134125605
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzFkNzI4ZjUwZTMzNGRhNGExZGFkOGQzZTE1OWU1M2NlY2JjNzU0N2FiYzZiMTE2NDYyOTg3ZmQ1YzgxIn19fQ=="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 1",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -770373206,
+                                902578187,
+                                -1086787525,
+                                1243298982
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQyMzliZWNiZWI4MTcxNTg3MTIxMmJkMmFjNDI0MzJhOTczYTllZWUxY2VjMGVjYzExOGMzYzlhODk4ZmEifX19"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 2",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -671435396,
+                                -1276951545,
+                                -1838823314,
+                                469002293
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjQ5MDMzMTFkNTlhZmQyNmNiOWQ0ZGZjMWI3M2ZjZmIzYTdmNWVlZWEzM2EyMjlhZGU3M2UyZWM0OTE5NjkzMiJ9fX0="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 3",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                1714632459,
+                                -128171938,
+                                -1773641984,
+                                -1718901427
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzY5YzVlNDI3YzEwNmFkY2U2ZjE4ZDdlOTFmZWRmNDg4M2IwMzRjNDhlNTFkNTU3ZDNhMmQzMDZmNDE0In19fQ=="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 4",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                2074223469,
+                                -1791079317,
+                                -1603894986,
+                                -1279259939
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmU5OGQyYzEwMTE2MzQyYjYxY2FlZjU2Mzc1ZDdjZjJhMWY4YjY2YjMwYTcxNWUxOGY1ZDg5MDhlZjA4YyJ9fX0="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 5",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                1426822657,
+                                -506314724,
+                                -1827303292,
+                                761122548
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODhkMTUyMTMzMWI5ZDZlODFmYTgxNzgxZTM3NmRmNjNiOWM2NTRmY2QwODEwYzBkOTgyYjBhM2VlNmY2In19fQ=="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 6",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -986098394,
+                                1081950438,
+                                -2123378665,
+                                -1191963587
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Q3ZjU0NzMxNzgwMjIyYWFmNjhhMGEyZDUyMmUzOWY0ZDczMjQzNDQ3YjczZjlkYTYyMTQxMTM2NWVlNGMifX19"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 7",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 1,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                1237538425,
+                                -945598738,
+                                -1958156198,
+                                -1778824276
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTg0ZGJjNmExMzk5YThiYWVlZThkZWE5MmY5MGQzOTgzMjljNjVlY2Y1ODhjYmNhM2Y3MTdhMWY0NDAzNTgzIn19fQ=="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 8",
+                            "color": "light_purple",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -1474380378,
+                                1740391099,
+                                -1773132503,
+                                -1503404588
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2ZkNTJmZWVmYjg3MzcxM2Y0N2E0YTIxYjY3Y2ExMWFmNDE2M2JhMjA0ZTIyYTRlYWUwZjVjMTUzYjBhNSJ9fX0="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 9",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                1897303794,
+                                -1743040640,
+                                -1138633500,
+                                -1045650435
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2I1YzRhNjMyNDFjOWQwYzIxYWZlY2UxYmNhZTgyOTg3YWUyNGM2NGNhZmFlNWYwNzAyYzQ5NzkzZDIyYSJ9fX0="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 10",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -966142433,
+                                -1950201523,
+                                -2130855027,
+                                -151843889
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGM4NmJmMzFjZmY3ZDE1MTNkOGY1OTUxYWE2MTE5OTU1MjQ4MWQzYjgzYjU1YTczYjJjZmRlZWUyMTZiMGE4In19fQ=="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 11",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                1670847784,
+                                -973454795,
+                                -2122230892,
+                                770880961
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODJmMDcxYzAzMTU2N2I4NWM5ZmRiY2U1NmU1ZjM0YzlhZTkzMjY2YWI0MTJkZGE5YzZiYTM3NWU4NzliMiJ9fX0="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 12",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                1262465389,
+                                -789100058,
+                                -1806736632,
+                                -774554550
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODVjYjRhMjQ3MzM5ZjBiMGE1NjFmYTJjZmI5ZjI1NTMyM2Y2Njk1YjRmN2M4MmU2MWVhODY0OTY1MDdiZDcifX19"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 13",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -2127166956,
+                                -850181023,
+                                -1546531011,
+                                1013895410
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTRhOWQ0YTJkNTVlOWQ4MTdmZjA3YWViYzMxMTNkZDU4NDU3ZTgyYmU1NGNjYTMxYTgyNGM2ZDZhYmE2In19fQ=="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 14",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 5,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                -335080803,
+                                1720075466,
+                                -1085228630,
+                                -1182370124
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWM1YmI3ZmI0Yjc1Mzk2MTY4N2VlYjVkM2M3ZDc3M2U0YTdkM2E1NWQ1Njk5NmU5YjVmMTRhN2NhOGI3NiJ9fX0="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Ball 15",
+                            "color": "aqua",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "item",
+            "weight": 1,
+            "name": "minecraft:player_head",
+            "functions": [
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+                {
+                    "function": "set_components",
+                    "components": {
+                        "minecraft:profile": {
+                            "id": [
+                                847790243,
+                                215764893,
+                                -1399049444,
+                                -1259991534
+                            ],
+                            "properties": [
+                                {
+                                    "name": "textures",
+                                    "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI2MzQwMWEzY2YzMmYyODVhZjdlZTJkMzBlZTMzMzBjMzMzYTk0NmU4ZjBhODE2OWVlMTBkNTcxZmI4MDdmIn19fQ=="
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "function": "set_name",
+                    "name": [
+                        {
+                            "text": "Billiard Cue Ball",
+                            "color": "light_purple",
+                            "underlined": false,
+                            "bold": false,
+                            "italic": false
+                        }
+                    ]
+                }
+            ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minecraft:entities/zombie"
+}
